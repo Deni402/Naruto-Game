@@ -147,15 +147,17 @@ function setupGame() {
   const grid = document.querySelector('.grid')
   const cells = []
   let player = 95
-  let playerShoot = null 
+  let playerShoot = 95
 
   for (let i = 0; i < gridSize; i++) {
     const cell = document.createElement('div')
     grid.appendChild(cell)
     cells.push(cell)
   }
+ 
 
   cells[player].classList.add('player')
+  cells[playerShoot].classList.add('playerShoot')
 
   document.addEventListener('keyup', (e) => {
     switch (e.keyCode) {
@@ -180,13 +182,10 @@ function setupGame() {
         break
       }
       case 32: {
+        cells[playerShoot].classList.remove('playerShoot')
         playerShoot = (player - 10)
         cells[playerShoot].classList.add('playerShoot')
-        setInterval(() => {
-          // cells[playerShoot].classList.add('playerShoot')
-          cells[playerShoot].classList.remove('playerShoot')
-          playerShoot = (player - 20)
-        }, 400)
+        
       }
       
     }
@@ -197,6 +196,16 @@ function setupGame() {
 
 
   })
+  function playerSh() {
+    cells[playerShoot].classList.remove('playerShoot')
+    playerShoot -= 10
+    cells[playerShoot].classList.add('playerShoot')
+  }
+  function gameLoop() {
+    setTimeout(gameLoop, 400)
+    playerSh()
+  }
+  gameLoop()
 
   document.addEventListener('keyup', (e) => {
     var keypressed = e.key && e.keyCode

@@ -39,7 +39,7 @@ function setupGame() {
     alienBombId = setInterval(alienBomb, 800)
     spaceshipIndex = 95
     squares[spaceshipIndex].classList.add('spaceship')
-    livesLeft = 3 // needs to be updated so this listens to livesleft at top of code
+    livesLeft = 3 
     scoreTally = 0
     scoreId.innerText = 0
     livesId.innerText = 3
@@ -71,7 +71,7 @@ function setupGame() {
     audio.src = 'sounds/005_14.wav'
     audio.play()
   }
-  //
+  
   function loseLifeAudio() {
     audio.src = 'sounds/009_18.wav'
     audio.play()
@@ -94,7 +94,7 @@ function setupGame() {
   // ALIENS ====================================================================
   function createAlien() { // create alien array
     alienArray.forEach(alien => {
-      // console.log('alien array foreach', squares[alien])
+      
       squares[alien].classList.add('activeAlien')
     })
   }
@@ -139,7 +139,7 @@ function setupGame() {
       livesId.innerText = livesLeft
       loseLifeAudio()
     } else {
-      livesId.innerText = 0 // cheat here and use 0? sometimes lives keeps going below 0
+      livesId.innerText = 0 
       gameOver('Kurama takes over the control! <i class="fa fa-frown-o" aria-hidden="true"></i>')
     }
   }
@@ -161,11 +161,11 @@ function setupGame() {
     endMessage.classList.remove('hidden')
     endMessage.innerHTML = message
     grid.classList.add('hidden')
-    start.innerText = 'Play game'
+    start.innerText = 'Play again!'
     start.classList.remove('hidden')
     scoreId.classList.remove('hidden')
     livesId.classList.remove('hidden')
-    // livesLeft = 0
+    
     livesId.innerText = livesLeft
   }
 

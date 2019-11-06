@@ -100,6 +100,7 @@ h1 {
   letter-spacing: 15px;
   font-weight: bold;
   -webkit-text-stroke: 2px black;
+
 }
 
 
@@ -156,13 +157,17 @@ h1 {
   font-size: 40px;
   text-align: center;
   margin-top: 30px;
+  padding: 10px;;
   letter-spacing: 10px;
   font-weight: bold; 
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
   -webkit-text-stroke: 2px rgb(0, 0, 0);
-  
+  border: 0px solid black;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgb(3, 3, 3);
+  background-image: url('images/IMG_9035.jpg');
 }
 
 

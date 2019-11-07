@@ -21,6 +21,7 @@ function setupGame() {
   let  alienBombMovementId
   let  alienBombId
 
+
   start.innerText = 'Start Fight!'
 
   // Start game function
@@ -44,6 +45,7 @@ function setupGame() {
     scoreId.innerText = 0
     livesId.innerText = 3
     endMessage.classList.add('hidden')
+    backgroundAudio()
   }
 
   // CREATE GRID ===============================================================
@@ -55,32 +57,34 @@ function setupGame() {
     squares.push(square) //creates new array of divs
     grid.appendChild(square)
   }
-  // for (let i = 0; i < gridSize; i++) {
-  //   const cell = document.createElement('div')
-  //   grid.appendChild(cell)
-  //   cells.push(cell)
-  // }
 
   // AUDIO =====================================================================
-  function bulletAudio() {
-    audio.src = 'sounds/004_13.wav'
-    audio.play()
-  }
-
-  function alienBombAudio() {
-    audio.src = 'sounds/005_14.wav'
+  // function bulletAudio() {
+  //   audio.src = 'sounds/katon_aoszcAp.wav'
+  //   audio.play()
+  // }
+  function backgroundAudio() {
+    audio.src = 'sounds/Naruto-Shippuden-Samidare-_ksolis-Trap-Remix_.wav'
     audio.play()
   }
   
-  function loseLifeAudio() {
-    audio.src = 'sounds/009_18.wav'
-    audio.play()
-  }
+
+  // function alienBombAudio() {
+  //   audio.src = 'sounds/005_14.wav'
+  //   audio.play()
+  // }
+  
+  // function loseLifeAudio() {
+  //   audio.src = 'sounds/009_18.wav'
+  //   audio.play()
+  // }
+
 
   function gameOverAudio() {
-    audio.src = 'sounds/016_8.wav'
+    audio.src = 'sounds/naruto-trap-_1_.wav'
     audio.play()
   }
+  
   // USER SPACESHIP ============================================================
   function moveSpaceship() {
     // find the square with the class of spaceship
@@ -119,7 +123,7 @@ function setupGame() {
   // ALIEN BOMB ================================================================
   function alienBomb() {
     let bombIndex = alienArray[Math.floor(Math.random() * alienArray.length)]
-    alienBombAudio()
+    // alienBombAudio()
 
     const alienBombMovementId = setInterval(() => {
       bombIndex = drawBullet(bombIndex, width, 'bomb')
@@ -137,7 +141,7 @@ function setupGame() {
     if (gameInPlay) livesLeft--
     if (livesLeft !== 0) {
       livesId.innerText = livesLeft
-      loseLifeAudio()
+      // loseLifeAudio()
     } else {
       livesId.innerText = 0 
       gameOver('Kurama takes over the control! <i class="fa fa-frown-o" aria-hidden="true"></i>')
@@ -208,13 +212,14 @@ function setupGame() {
   // FIRE BULLET ===============================================================
   function fire(){
     let bulletIndex = spaceshipIndex
-    const bulletIntervalId = setInterval(() => {
+    const bulletIntervalId = setInterval(() => { 
       bulletIndex = drawBullet(bulletIndex, -width, 'bullet')
       if (collision(bulletIndex, 'activeAlien', 'bullet', bulletIntervalId)){
         alienDeath(bulletIndex)
         updateScore()
         if (alienArray.length === 0) {
           gameOver('<i class="fa fa-hand-peace-o" aria-hidden="true"></i> You beat Kurama! <i class="fa fa-hand-peace-o" aria-hidden="true"></i>')
+          
         }
       }
       collision(bulletIndex, 'ceiling', 'bullet', bulletIntervalId)
@@ -224,7 +229,7 @@ function setupGame() {
   // USER BULLET ===============================================================
   document.addEventListener('keydown', (e) => {
     if (e.keyCode === 32) {
-      bulletAudio()
+      // bulletAudio()
       fire()
     }
   })

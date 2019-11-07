@@ -36,7 +36,7 @@ function setupGame() {
     currentAlienMove = 0
     alienArray = alienStart.slice()
     createAlien()
-    moveAliensTimerId = setInterval(moveAliens, 800)
+    moveAliensTimerId = setInterval(moveAliens, 3000)
     alienBombId = setInterval(alienBomb, 800)
     spaceshipIndex = 95
     squares[spaceshipIndex].classList.add('spaceship')
@@ -223,7 +223,7 @@ function setupGame() {
         }
       }
       collision(bulletIndex, 'ceiling', 'bullet', bulletIntervalId)
-    }, 200)
+    }, 400)
   }
 
   // USER BULLET ===============================================================

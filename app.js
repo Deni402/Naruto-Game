@@ -223,7 +223,7 @@ function setupGame() {
         }
       }
       collision(bulletIndex, 'ceiling', 'bullet', bulletIntervalId)
-    }, 100)
+    }, 200)
   }
 
   // USER BULLET ===============================================================

@@ -180,6 +180,8 @@ The biggest challenge for making Space Invaders was dealing with set intervals. 
 The movement of large groups of aliens in formation was also challenging and took a lot of pseudo-coding to break down into manageable steps.
 
 ## Wins
+
+
 I was really pleased with what I achieved after just three weeks of learning Javascript. In particular, my understanding of arrays and set intervals improved dramatically over the seven days.
 
 ## Future features

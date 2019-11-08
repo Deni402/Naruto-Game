@@ -18,7 +18,7 @@ Made with Vanilla Javascript
 
 ## Overview
 
-[Link to game](https://emma3333.github.io/SEI-Project-01/)
+[Link to game]()
 
 ### Introduction
 My Space Invaders game is a take on the classic Space Invaders game from the 80s. The aim of the game is for the user to shoot the invading alien armada before it reaches the players spaceship.
@@ -51,29 +51,28 @@ The aim of the game is to achieve the highest score before the aliens reach the 
 
 * The game begins with a simple landing page. Click on 'Play game' to start the game.
 
-![Landing Page](https://user-images.githubusercontent.com/35655626/55621277-fa710d00-5794-11e9-8894-3cdc900f6e7e.png)
+![Landing Page]()
 
 * On page load, the aliens will start moving towards the players spaceship and dropping bombs periodically.
 
-![Game Page](https://user-images.githubusercontent.com/35655626/55621446-6eabb080-5795-11e9-89b2-946a727774df.png)
+![Game Page]()
 
 * Use the left and right arrow keys to dodge the alien bombs.
 
 * Use spacebar to fire bullets upwards to kill the aliens from your current position.
 
-![Game Page - Fire Bullets](https://user-images.githubusercontent.com/35655626/55621697-2476ff00-5796-11e9-9b52-6b696a11848c.png)
+![Game Page - Fire Bullets]()
 
 * Each time you kill an alien, your score will increase by one (max score is 33).
 
-![Game Page - Score](https://user-images.githubusercontent.com/35655626/55621885-a5ce9180-5796-11e9-88d0-de428dbccfac.png)
-
+![Game Page - Score]()
 * You start each game with three lives, each time you're hit by an alien bomb you lose a life. If you lose all three lives, the game will end, taking you to the screen below. Click 'Play game' to play again.
 
-![Game Page - Game Over](https://user-images.githubusercontent.com/35655626/55622115-402ed500-5797-11e9-81e2-beedc68a2c9e.png)
+![Game Page - Game Over]()
 
 * Kill all of the aliens by shooting them to win the game. This will take you to the following screen. Click 'Play game' to play again.
 
-![Game Page - Win](https://user-images.githubusercontent.com/35655626/55622230-884df780-5797-11e9-9f0b-7abdbd81cec7.png)
+![Game Page - Win]()
 
 ## Process
 The first thing I did was create a 15 x 15 grid in Javascript to build the rest of the game on. After this there were five key parts of the game I needed to tackle before moving forward with any logic: creating an array of aliens; using a set interval to move the aliens across and down the page; creating the players spaceship which moves from left to right within the 15 x 15 grid on an event listener; adding an event listener to allow the player to fire a bullet and creating a set interval to make the aliens drop bombs.

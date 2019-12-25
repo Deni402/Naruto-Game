@@ -98,7 +98,6 @@ function setupGame() {
   // ALIENS ====================================================================
   function createAlien() { // create alien array
     alienArray.forEach(alien => {
-      
       squares[alien].classList.add('activeAlien')
     })
   }

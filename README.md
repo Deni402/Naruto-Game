@@ -1,15 +1,15 @@
-# SEI-Project-01: Space Invaders
+# SEI-Project-01: Naruto Invaders
+
 Made with Vanilla Javascript
 
 ## Technologies used
 
-* JavaScript (ES6)
+* JavaScript(ES6)
 * HTML5
 * CSS
 * git
 * GitHub
-* HTML5 Audio
-* CSS animation
+
 
 ## Installation
 
@@ -18,18 +18,25 @@ Made with Vanilla Javascript
 
 ## Overview
 
-[Link to game]()
+[Link to game]: (https://deni402.github.io/Naruto-Game/)
+
+### How to play
+
+Use the right bottom arrows to move and space bar to shoot.
+
 
 ### Introduction
-My Space Invaders game is a take on the classic Space Invaders game from the 80s. The aim of the game is for the user to shoot the invading alien armada before it reaches the players spaceship.
+
+Naruto Invaders is a take on the classic Space Invaders game from the 80s. The aim of the game is for the user to shoot the invading alien armada and dodge the bullets before it reaches the players spaceship.
 
 The alien armada periodically drops bombs towards the player. The player can move from left to right to dodge the bombs being dropped by the alien armada. The player can fire bullets by pressing the space bar to shoot at the approaching aliens.
 
-The player wins by destroying the alien armada. The player has three lives, and loses a life each time the player is hit by one of the bombs dropped by the alien armada. Once the player has won or died, the player can choose to play again.
+The player wins by destroying the alien armada. The player has three lives, and loses a life each time the player is hit by one of the bombs dropped by the alien. Once the player has won or died, the player can choose to play again.
 
 The aim of the game is to achieve the highest score before the aliens reach the spaceship.
 
 ### Timeframe
+
 * 7 day solo project
 
 ### Brief
@@ -49,7 +56,7 @@ The aim of the game is to achieve the highest score before the aliens reach the 
 
 ### Game Instructions
 
-* The game begins with a simple landing page. Click on 'Play game' to start the game.
+* The game begins with a simple landing page. Click on 'START FIGHT' to start the game.
 
 ![Landing Page]()
 
@@ -63,71 +70,70 @@ The aim of the game is to achieve the highest score before the aliens reach the 
 
 ![Game Page - Fire Bullets]()
 
-* Each time you kill an alien, your score will increase by one (max score is 33).
+* Each time you kill an alien, your score will increase by one (max score is 32).
 
 ![Game Page - Score]()
 * You start each game with three lives, each time you're hit by an alien bomb you lose a life. If you lose all three lives, the game will end, taking you to the screen below. Click 'Play game' to play again.
 
-![Game Page - Game Over]()
 
-* Kill all of the aliens by shooting them to win the game. This will take you to the following screen. Click 'Play game' to play again.
+![Game Page - Win]() 
 
-![Game Page - Win]()
+* Kill all of the aliens by shooting them to win the game. This will take you to the following screen. Click 'Play again' to play again.
 
 ## Process
-The first thing I did was create a 15 x 15 grid in Javascript to build the rest of the game on. After this there were five key parts of the game I needed to tackle before moving forward with any logic: creating an array of aliens; using a set interval to move the aliens across and down the page; creating the players spaceship which moves from left to right within the 15 x 15 grid on an event listener; adding an event listener to allow the player to fire a bullet and creating a set interval to make the aliens drop bombs.
+The first thing I did was create a 10 x 10 grid in Javascript to build the rest of the game on. After this there were five key parts of the game I needed to tackle before moving forward with any logic: creating an array of aliens; using a set interval to move the aliens across and down the page; creating the player character which moves from left to right within the 10 x 10 grid on an event listener; adding an event listener to allow the player to fire a bullet and creating a set interval to make the aliens drop bombs.
 
 #### Aliens
 To create the alien armada I created a class of of 'activeAlien' in CSS which I added to my alien array in Javascript using the forEach method. To move the alien armada I used multiple arrays along with forEach to loop through the alien array to remove the class of alien, find the new position of the alien and increment the position of alien until it reached the bottom of the grid.
 
 Create aliens:
 ```javascript
-function createAlien() {
-  alienArray.forEach(alien => {
-    squares[alien].classList.add('activeAlien')
-  })
-}
+ function createAlien() {
+    alienArray.forEach(alien => {
+      squares[alien].classList.add('activeAlien')
+    })
+  }
 ```
 
 Move aliens:
 ```javascript
 function moveAliens() {
-  alienArray.forEach(alien => {
-    squares[alien].classList.remove('activeAlien')
-  })
-  alienArray = alienArray.map(alien => alien + alienMovement[currentAlienMove])
-  alienArray.forEach(alien => {
-    squares[alien].classList.add('activeAlien')
-  })
-  currentAlienMove++     
-  if (currentAlienMove === alienMovement.length) currentAlienMove = 0
-  if (alienArray.some(alien => alien >= 210)) {
-    gameOver('Game Over <i class="far fa-thumbs-down"></i>')
+    alienArray.forEach(alien => {
+      squares[alien].classList.remove('activeAlien') // loop through aliens & remove all aliens
+    })
+    alienArray = alienArray.map(alien => alien + alienMovement[currentAlienMove]) //find new alien positions
+    alienArray.forEach(alien => {
+      squares[alien].classList.add('activeAlien') //add class of alien to all aliens
+    })
+    currentAlienMove++     // increment currentMove
+    if (currentAlienMove === alienMovement.length) currentAlienMove = 0
+    if (alienArray.some(alien => alien >= 90)) {
+      gameOver('Kurama takes over the control!  <i class="fa fa-frown-o" aria-hidden="true"></i>')
+    }
   }
-}
 ```
 
 I created a function for the alien armada to drop bombs using two set intervals to drop bombs periodically, which then moved down the grid a square at a time.
 
 Alien bomb:
 ```javascript
-function alienBomb() {
-  let bombIndex = alienArray[Math.floor(Math.random() * alienArray.length)]
-  alienBombAudio()
-
-  const alienBombMovementId = setInterval(() => {
-    bombIndex = drawBullet(bombIndex, width, 'bomb')
-    if (collision(bombIndex, 'spaceship', 'bomb', alienBombMovementId)) {
-      loseLife()
-    }
-    collision(bombIndex, 'floor', 'bomb', alienBombMovementId)
-    if(!gameInPlay) clearInterval(alienBombMovementId)
-  }, 400)
-}
+  function alienBomb() {
+    let bombIndex = alienArray[Math.floor(Math.random() * alienArray.length)]
+    // alienBombAudio()
+    const alienBombMovementId = setInterval(() => {
+      bombIndex = drawBullet(bombIndex, width, 'bomb')
+      if (collision(bombIndex, 'spaceship', 'bomb', alienBombMovementId)) {
+        loseLife()
+      }
+      collision(bombIndex, 'floor', 'bomb', alienBombMovementId)
+      
+      if (!gameInPlay) clearInterval(alienBombMovementId)
+    }, 400)
+  }
 ```
 
 #### Player's spaceship, collisions, score
-To create the players spaceship I added the class of spaceship to the relevant square and then added an event listener to move from left to right. I then added an event listener for the user to fire bullets at the alien armada, using a set interval to get the bullet to move up the grid.
+To create the players spaceship I added the class of spaceship to the relevant square and then added an event listener to move from left to right. I then added an event listener for the user to fire bullets at the aliens, using a set interval to get the bullet to move up the grid.
 
 Once I had the main components in place, I could add functions to create collisions, get the user to win or lose, update the score and lose lives.
 
@@ -137,41 +143,44 @@ Once the game was working and bug-free, I focused on the CSS to improve the look
 
 Collision:
 ```javascript
-function collision(index, target, shot, interval){
-  if (squares[index].classList.contains(target)) {
-    squares[index].classList.remove(shot)
-    squares[index].classList.add('explosion')
-    setTimeout(() => {
-      squares[index].classList.remove('explosion')
-    }, 300)
-    clearInterval(interval)
-    return true
-  } else return false
-}
+ function collision(index, target, shot, interval){
+    if (squares[index].classList.contains(target)) {
+      console.log(`At ${index}, ${target} hit by ${shot}`)
+      squares[index].classList.remove(shot)
+      squares[index].classList.add('explosion')
+      setTimeout(() => {
+        squares[index].classList.remove('explosion')
+      }, 300)
+      clearInterval(interval)
+      return true
+    } else return false
+  }
 ```
 
 Game init function:
 ```javaScript
 function gameInit() {
-  squares.forEach(square => square.classList.remove('activeAlien', 'explosion', 'spaceship', 'bullet', 'bomb'))
-  gameInPlay = true
-  grid.classList.remove('hidden')
-  scoreText.classList.remove('hidden')
-  livesText.classList.remove('hidden')
-  start.classList.add('hidden')
-  currentAlienMove = 0
-  alienArray = alienStart.slice()
-  createAlien()
-  moveAliensTimerId = setInterval(moveAliens, 400)
-  alienBombId = setInterval(alienBomb, 600)
-  spaceshipIndex = 217
-  squares[spaceshipIndex].classList.add('spaceship')
-  livesLeft = 3
-  scoreTally = 0
-  scoreId.innerText = 0
-  livesId.innerText = 3
-  endMessage.classList.add('hidden')
-}
+    squares.forEach(square => square.classList.remove('activeAlien', 'explosion', 'spaceship', 'bullet', 'bomb'))
+    console.log(squares.map(square => square.className).join(''))
+    gameInPlay = true
+    grid.classList.remove('hidden')
+    scoreText.classList.remove('hidden')
+    livesText.classList.remove('hidden')
+    start.classList.add('hidden')
+    currentAlienMove = 0
+    alienArray = alienStart.slice()
+    createAlien()
+    moveAliensTimerId = setInterval(moveAliens, 3000)
+    alienBombId = setInterval(alienBomb, 800)
+    spaceshipIndex = 95
+    squares[spaceshipIndex].classList.add('spaceship')
+    livesLeft = 3 
+    scoreTally = 0
+    scoreId.innerText = 0
+    livesId.innerText = 3
+    endMessage.classList.add('hidden')
+    backgroundAudio()
+  }
 ```
 
 ## Challenges
@@ -186,6 +195,6 @@ I was really pleased with what I achieved after just three weeks of learning Jav
 
 ## Future features
 The three main improvements I'd like to make are as follows.
-1. Adding a leaderboard using localStorage to keep a track of high scores.
-2. Make the game responsive.
+1. Add the instructions for the game at the landing page.
+2. Create a mobile version.
 3. Make the game more enjoyable for users by adding different levels of difficulty.

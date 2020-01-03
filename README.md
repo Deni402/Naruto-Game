@@ -1,5 +1,7 @@
 # SEI-Project-01: Naruto Invaders
 
+Play the game here: https://deni402.github.io/Naruto-Game/
+
 Made with Vanilla Javascript
 
 ## Technologies used

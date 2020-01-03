@@ -29,7 +29,7 @@ Use the right bottom arrows to move and space bar to shoot.
 
 Naruto Invaders is a take on the classic Space Invaders game from the 80s. The aim of the game is for the user to shoot the invading alien armada and dodge the bullets before it reaches the players spaceship.
 
-The alien armada periodically drops bombs towards the player. The player can move from left to right to dodge the bombs being dropped by the alien armada. The player can fire bullets by pressing the space bar to shoot at the approaching aliens.
+The alien armada periodically drops bombs towards the player. The player can move from left to right to dodge the bombs being dropped by the alien armada. The player can fire bullets by pressing the spacebar to shoot at the approaching aliens.
 
 The player wins by destroying the alien armada. The player has three lives, and loses a life each time the player is hit by one of the bombs dropped by the alien. Once the player has won or died, the player can choose to play again.
 

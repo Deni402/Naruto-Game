@@ -60,7 +60,7 @@ The aim of the game is to achieve the highest score before the aliens reach the 
 
 * The game begins with a simple landing page. Click on 'START FIGHT' to start the game.
 
-![Landing Page]()
+![Landing Page](https://i.imgur.com/alufKmT.png)
 
 * On page load, the aliens will start moving towards the players spaceship and dropping bombs periodically.
 

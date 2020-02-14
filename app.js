@@ -68,18 +68,6 @@ function setupGame() {
     audio.play()
   }
   
-
-  // function alienBombAudio() {
-  //   audio.src = 'sounds/005_14.wav'
-  //   audio.play()
-  // }
-  
-  // function loseLifeAudio() {
-  //   audio.src = 'sounds/009_18.wav'
-  //   audio.play()
-  // }
-
-
   function gameOverAudio() {
     audio.src = 'sounds/naruto-trap-_1_.wav'
     audio.play()

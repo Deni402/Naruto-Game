@@ -68,6 +68,8 @@ The aim of the game is to achieve the highest score before the aliens reach the 
 
 * Use the left and right arrow keys to dodge the alien bombs.
 
+![Shoot](https://i.imgur.com/UDlwBta.png)
+
 * Use spacebar to fire bullets upwards to kill the aliens from your current position.
 
 * Each time you kill an alien, your score will increase by one (max score is 32).

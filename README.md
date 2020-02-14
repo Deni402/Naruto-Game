@@ -64,21 +64,19 @@ The aim of the game is to achieve the highest score before the aliens reach the 
 
 * On page load, the aliens will start moving towards the players spaceship and dropping bombs periodically.
 
-![Game Page]()
+![Game Page](https://i.imgur.com/u8Ob8QB.png)
 
 * Use the left and right arrow keys to dodge the alien bombs.
 
 * Use spacebar to fire bullets upwards to kill the aliens from your current position.
 
-![Game Page - Fire Bullets]()
-
 * Each time you kill an alien, your score will increase by one (max score is 32).
 
-![Game Page - Score]()
+![Game Page - Score](https://i.imgur.com/htwW518.png)
 * You start each game with three lives, each time you're hit by an alien bomb you lose a life. If you lose all three lives, the game will end, taking you to the screen below. Click 'Play game' to play again.
 
 
-![Game Page - Win]() 
+![Game Page - Win](https://i.imgur.com/QyGZcw7.png)
 
 * Kill all of the aliens by shooting them to win the game. This will take you to the following screen. Click 'Play again' to play again.
 

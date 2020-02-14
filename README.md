@@ -80,8 +80,8 @@ The aim of the game is to achieve the highest score before the aliens reach the 
 ## Process
 The first thing I did was create a 10 x 10 grid in Javascript to build the rest of the game on. After this there were five key parts of the game I needed to tackle before moving forward with any logic: creating an array of aliens; using a set interval to move the aliens across and down the page; creating the player character which moves from left to right within the 10 x 10 grid on an event listener; adding an event listener to allow the player to fire a bullet and creating a set interval to make the aliens drop bombs.
 
-#### Aliens
-To create the alien armada I created a class of of 'activeAlien' in CSS which I added to my alien array in Javascript using the forEach method. To move the alien armada I used multiple arrays along with forEach to loop through the alien array to remove the class of alien, find the new position of the alien and increment the position of alien until it reached the bottom of the grid.
+## Aliens
+To create the alien armada I created a class of 'activeAlien' in CSS which I added to my alien array in Javascript using the forEach method. To move the alien armada I used multiple arrays along with forEach to loop through the alien array to remove the class of alien, find the new position of the alien and increment the position of alien until it reached the bottom of the grid.
 
 Create aliens:
 ```javascript
@@ -129,7 +129,7 @@ Alien bomb:
   }
 ```
 
-#### Player's spaceship, collisions, score
+## Player's spaceship, collisions, score
 To create the players spaceship I added the class of spaceship to the relevant square and then added an event listener to move from left to right. I then added an event listener for the user to fire bullets at the aliens, using a set interval to get the bullet to move up the grid.
 
 Once I had the main components in place, I could add functions to create collisions, get the user to win or lose, update the score and lose lives.

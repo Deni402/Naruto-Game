@@ -59,28 +59,23 @@ The aim of the game is to achieve the highest score before the aliens reach the 
 ### Game Instructions
 
 * The game begins with a simple landing page. Click on 'START FIGHT' to start the game.
-
 ![Landing Page](https://i.imgur.com/alufKmT.png)
 
 * On page load, the aliens will start moving towards the players spaceship and dropping bombs periodically.
-
 ![Game Page](https://i.imgur.com/u8Ob8QB.png)
 
 * Use the left and right arrow keys to dodge the alien bombs.
 
-![Shoot](https://i.imgur.com/UDlwBta.png)
-
 * Use spacebar to fire bullets upwards to kill the aliens from your current position.
+![Shoot](https://i.imgur.com/UDlwBta.png)
 
 * Each time you kill an alien, your score will increase by one (max score is 32).
 
-![Game Page - Score](https://i.imgur.com/htwW518.png)
 * You start each game with three lives, each time you're hit by an alien bomb you lose a life. If you lose all three lives, the game will end, taking you to the screen below. Click 'Play again!' to restart.
-
-
-![Game Page - Win](https://i.imgur.com/QyGZcw7.png)
+![Game Page - Score](https://i.imgur.com/htwW518.png)
 
 * Kill all of the aliens by shooting them to win the game. This will take you to the following screen.
+![Game Page - Win](https://i.imgur.com/QyGZcw7.png)
 
 ## Process
 The first thing I did was create a 10 x 10 grid in Javascript to build the rest of the game on. After this there were five key parts of the game I needed to tackle before moving forward with any logic: creating an array of aliens; using a set interval to move the aliens across and down the page; creating the player character which moves from left to right within the 10 x 10 grid on an event listener; adding an event listener to allow the player to fire a bullet and creating a set interval to make the aliens drop bombs.

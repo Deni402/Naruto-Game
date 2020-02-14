@@ -78,7 +78,7 @@ The aim of the game is to achieve the highest score before the aliens reach the 
 
 ![Game Page - Win](https://i.imgur.com/QyGZcw7.png)
 
-* Kill all of the aliens by shooting them to win the game. This will take you to the following screen. Click 'Play again' to play again.
+* Kill all of the aliens by shooting them to win the game. This will take you to the following screen. Click 'Play again' to restart.
 
 ## Process
 The first thing I did was create a 10 x 10 grid in Javascript to build the rest of the game on. After this there were five key parts of the game I needed to tackle before moving forward with any logic: creating an array of aliens; using a set interval to move the aliens across and down the page; creating the player character which moves from left to right within the 10 x 10 grid on an event listener; adding an event listener to allow the player to fire a bullet and creating a set interval to make the aliens drop bombs.

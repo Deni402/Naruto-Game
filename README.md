@@ -196,5 +196,5 @@ I was really pleased with what I achieved after just three weeks of learning Jav
 ## Future features
 The three main improvements I'd like to make are as follows.
 1. Add the instructions for the game at the landing page.
-2. Create a mobile version.s
+2. Create a mobile version.
 3. Make the game more enjoyable for users by adding different levels of difficulty.

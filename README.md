@@ -91,6 +91,9 @@ Create aliens:
     })
   }
 ```
+## Learning Key
+Using arrays, set interval and event listener at this part of the project I got to understand how important practice is when it comes to logical properties also using the right syntax and put everything together to convert my idea into a real working game which is really satisfying.
+
 
 Move aliens:
 ```javascript

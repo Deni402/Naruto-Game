@@ -91,9 +91,6 @@ Create aliens:
     })
   }
 ```
-## Learning Key
-Using arrays, set interval and event listener at this part of the project I got to understand how important practice is when it comes to logical properties also using the right syntax and put everything together to convert my idea into a real working game which is really satisfying.
-
 
 Move aliens:
 ```javascript
@@ -131,6 +128,9 @@ Alien bomb:
     }, 400)
   }
 ```
+
+## Learning Key
+Using arrays, set interval and event listener at this part of the project I got to understand how important practice is when it comes to logical properties also using the right syntax and putting everything together to convert my idea into a real working game which is really satisfying.
 
 ## Player's spaceship, collisions, score
 To create the players spaceship I added the class of spaceship to the relevant square and then added an event listener to move from left to right. I then added an event listener for the user to fire bullets at the aliens, using a set interval to get the bullet to move up the grid.
